@@ -4,3 +4,6 @@ b <- 10000
 events <- replicate(b,sample(beads,1))
 tab <- table(events)
 prop.table(tab)
+
+events2 <- sample(beads, b, replace = TRUE)
+> prop.table(table(events2))
