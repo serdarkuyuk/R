@@ -6,4 +6,8 @@ tab <- table(events)
 prop.table(tab)
 
 events2 <- sample(beads, b, replace = TRUE)
-> prop.table(table(events2))
+prop.table(table(events2))
+
+?set.seed
+set.seed(1, sample.kind="Rounding")  #when using 3.6 R
+mean(beads == "blue")
