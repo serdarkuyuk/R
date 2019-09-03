@@ -2,3 +2,5 @@ beads <- rep(c("red","blue"),times=c(2,3))
 sample(beads,1)
 b <- 10000
 events <- replicate(b,sample(beads,1))
+tab <- table(events)
+prop.table(tab)
