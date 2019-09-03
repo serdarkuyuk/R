@@ -1,0 +1,2 @@
+beads <- rep(c("red","blue"),times=c(2,3))
+sample(beads,1)
