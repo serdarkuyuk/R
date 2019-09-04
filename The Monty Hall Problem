@@ -11,7 +11,7 @@ stick <- replicate(B, {
 })
 mean(stick)    # probability of choosing prize door when sticking
 
-Code: Monte Carlo simulation of switch strategy
+#Code: Monte Carlo simulation of switch strategy
 switch <- replicate(B, {
   doors <- as.character(1:3)
   prize <- sample(c("car","goat","goat"))    # puts prizes in random order
