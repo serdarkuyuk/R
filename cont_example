@@ -1,0 +1,42 @@
+# Assign a variable 'female_avg' as the average female height.
+female_avg <- 64
+
+# Assign a variable 'female_sd' as the standard deviation for female heights.
+female_sd <- 3
+
+# Using variables 'female_avg' and 'female_sd', calculate the probability that a randomly selected female is shorter than 5 feet. Print this value to the console.
+pnorm(5*12,female_avg,female_sd)
+
+1 - pnorm(6*12,female_avg,female_sd)
+
+pnorm(67,female_avg,female_sd)-pnorm(61,female_avg,female_sd)
+
+####
+# Assign a variable 'female_avg' as the average female height.
+female_avg <- 64
+
+# Assign a variable 'female_sd' as the standard deviation for female heights.
+female_sd <- 3
+
+# To a variable named 'taller', assign the value of a height that is one SD taller than average.
+taller <- pnorm(female_avg+female_sd,female_avg,female_sd)
+
+# To a variable named 'shorter', assign the value of a height that is one SD shorter than average.
+shorter <- pnorm(female_avg-female_sd,female_avg,female_sd)
+
+# Calculate the probability that a randomly selected female is between the desired height range. Print this value to the console.
+taller-shorter
+
+##
+
+# Assign a variable 'male_avg' as the average male height.
+male_avg <- 69
+
+# Assign a variable 'male_sd' as the standard deviation for male heights.
+male_sd <- 3
+
+# Determine the height of a man in the 99th percentile of the distribution.
+qnorm(0.99,male_avg,male_sd)
+
+##
+
