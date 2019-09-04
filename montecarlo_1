@@ -11,3 +11,20 @@ prop.table(table(events2))
 ?set.seed
 set.seed(1, sample.kind="Rounding")  #when using 3.6 R
 mean(beads == "blue")
+
+
+
+
+B <- 10000
+
+# Use the `set.seed` function to make sure your answer matches the expected result after random sampling.
+set.seed(1)
+
+# Create an object called `celtic_wins` that replicates two steps for B iterations: (1) generating a random four-game series `simulated_games` using the example code, then (2) determining whether the simulated series contains at least one win for the Celtics. Put these steps on separate lines.
+celtic_wins <- replicate(B, {
+  simulated_games <- sample(c("lose","win"), 4, replace = TRUE, prob = c(0.6, 0.4))
+  any(simulated_games=="win")
+})
+
+# Calculate the frequency out of B iterations that the Celtics won at least one game. Print your answer to the console. 
+mean(celtic_wins)
