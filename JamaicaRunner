@@ -1,0 +1,14 @@
+#montecarlo
+runners <- c("Jamaica", "Jamaica", "Jamaica", "USA", "Ecuador", "Netherlands", "France", "South Africa")
+
+B <- 10000
+
+# Use the `set.seed` function to make sure your answer matches the expected result after random sampling.
+set.seed(1)
+
+# Create an object called `results` that replicates for `B` iterations a simulated series and determines whether that series contains at least four wins for the Cavs.
+results <- replicate(B, {
+  kek <- sample(runners, 3, replace = FALSE)
+  results <- mean(kek == "Jamaica") == 1
+})
+mean(results)
