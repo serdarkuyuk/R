@@ -1,0 +1,12 @@
+result <- function(n) {
+  result <- n*3*nrow(combinations(6,2))
+}
+
+sapply(1:12,result)
+
+
+result2 <- function(n) {
+  result2 <- 6*3*nrow(combinations(n,2))
+}
+
+sapply(2:12,result2)
