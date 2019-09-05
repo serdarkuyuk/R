@@ -1,0 +1,25 @@
+set.seed(16, sample.kind = "Rounding")
+act_scores <- rnorm(10000,20.9,5.7)
+ar <- (act_scores >= 36)
+which(ar %in% TRUE)
+
+res30 <-  1-pnorm(30,20.9,5.7)
+res10 <- pnorm(10,20.9,5.7)
+
+x <- seq(1,36)
+f_x <- dnorm(x,20.9,5.7)
+plot(x,f_x)
+
+
+zact_scores <- (act_scores-20.9)/5.7
+1-pnorm(2,0,1)
+qnorm(2,0,2)
+
+
+qnorm(0.95,20.9,5.7)
+qnorm(0.975,20.9,5.7)
+
+p <- seq(0.01, 0.99, 0.01)
+sample_quantiles <- qnorm(p,20.9,5.7)
+theoretical_quantiles <- qnorm(p,0,1)
+plot(theoretical_quantiles,sample_quantiles)
