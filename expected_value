@@ -42,4 +42,69 @@ n*(17*p_green+(-1)*p_not_green)
 # Compute the standard error of the sum of 1,000 outcomes
 sqrt(n)*(abs(-1-17)*sqrt(p_green*p_not_green))
 
+# Define the number of bets using the variable 'n'
+n <- 100
+
+# Calculate 'avg', the expected outcome of 100 spins if you win $17 when the ball lands on green and you lose $1 when the ball doesn't land on green
+avg <- n * (17*p_green + -1*p_not_green)
+
+# Compute 'se', the standard error of the sum of 100 outcomes
+se <- sqrt(n) * (17 - -1)*sqrt(p_green*p_not_green)
+
+# Using the expected value 'avg' and standard error 'se', compute the probability that you win money betting on green 100 times.
+1 - pnorm(0,avg,se)
+
+####################
+# Define the number of bets using the variable 'n'
+n <- 100
+
+# The variable `B` specifies the number of times we want the simulation to run. Let's run the Monte Carlo simulation 10,000 times.
+B <- 10000
+
+# Use the `set.seed` function to make sure your answer matches the expected result after random sampling.
+set.seed(1)
+
+# Create an object called `S` that replicates the sample code for `B` iterations and sums the outcomes.
+S <- replicate (B,{ 
+  X <- sample(c(17, -1), n, replace = TRUE, prob = c(p_green,p_not_green))
+  sum(X)
+})
+
+# Compute the average value for 'S'
+mean(S)
+
+# Calculate the standard deviation of 'S'
+sd(S)
+
+####################
+
+# Calculate the proportion of outcomes in the vector `S` that exceed $0
+mean(S > 0)
+
+#####################
+# Compute the standard error of 'Y', the mean outcome per bet from 10,000 bets.
+abs(17--1)*sqrt(p_green*p_not_green)/sqrt(n)
+
+###################
+
+# We defined the average using the following code
+avg <- 17*p_green + -1*p_not_green
+
+# We defined standard error using this equation
+se <- 1/sqrt(n) * (17 - -1)*sqrt(p_green*p_not_green)
+
+# Given this average and standard error, determine the probability of winning more than $0. Print the result to the console.
+1 - pnorm(0,avg,se)
+
+#####################3
+
+
+
+
+######################
+
+
+
+
+
 
